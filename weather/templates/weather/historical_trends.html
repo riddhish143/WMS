@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historical Weather Trends</title>
+</head>
+<body>
+    <h1>Historical Weather Trends</h1>
+    <ul>
+        {% for trend in trends %}
+            <li>{{ trend.date }}: Average Temperature: {{ trend.temp }}°C</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

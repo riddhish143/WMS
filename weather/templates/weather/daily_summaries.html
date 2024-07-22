@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Weather Summaries</title>
+</head>
+<body>
+    <h1>Daily Weather Summaries</h1>
+    <ul>
+        {% for summary in summaries %}
+            <li>{{ summary.date }}: {{ summary.summary }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
