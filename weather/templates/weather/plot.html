@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Plots</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light cyan background */
+            margin: 0;
+            padding: 20px;
+            color: #333; /* Text color */
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            transition: background 0.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+            color: #00796b; /* Dark teal color for heading */
+            font-size: 2.5em; /* Larger font size */
+            margin-bottom: 20px; /* Space below the heading */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+
+        .plot {
+            margin: 20px auto;
+            padding: 20px; /* Increased padding for better spacing */
+            background-color: #ffffff; /* White background for plots */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* More pronounced shadow */
+            border-radius: 10px; /* Rounded corners */
+            width: 80%;
+            transition: transform 0.2s; /* Smooth scaling effect on hover */
+        }
+
+        /* Hover effect for plots */
+        .plot:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+
+        .plot h2 {
+            color: #004d40; /* Darker teal for plot titles */
+            font-size: 1.8em; /* Larger font size for titles */
+            margin-bottom: 10px; /* Space below titles */
+        }
+
+        .plot img {
+            width: 100%; /* Responsive image */
+            border-radius: 8px; /* Rounded corners for images */
+            border: 2px solid #00796b; /* Teal border around images */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2em; /* Adjust font size for smaller screens */
+            }
+
+            .plot {
+                width: 90%; /* Slightly wider for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.5em; /* Further decrease font size for very small screens */
+            }
+
+            .plot h2 {
+                font-size: 1.5em; /* Adjust plot title size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Weather Data Visualization</h2>
+    <div class="plot">
+        {% comment %} <h2>Daily Temperature Summary</h2> {% endcomment %}
+        <img src="{% static 'weather/daily_summary.png' %}" alt="Daily Temperature Summary">
+    </div>
+    {% comment %} <div class="plot">
+        <h2>Monthly Temperature Trends</h2>
+        <img src="{% static 'weather/monthly_trends.png' %}" alt="Monthly Temperature Trends">
+    </div> {% endcomment %}
+</body>
+</html>
